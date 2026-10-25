@@ -1,0 +1,21 @@
+import { mayChu } from './axios.js';
+export const donDatPhongApi = {
+  danhSach: (thamSo) => mayChu.get('/quan-ly/don-dat-phong', { params: thamSo }),
+  choXacNhanCoc: () => mayChu.get('/quan-ly/don-dat-phong/cho-xac-nhan-coc'),
+  xacNhanCoc: (ma, duLieu) => mayChu.post(`/quan-ly/don-dat-phong/${ma}/xac-nhan-coc`, duLieu),
+  tuChoiCoc: (ma, duLieu) => mayChu.post(`/quan-ly/don-dat-phong/${ma}/tu-choi-coc`, duLieu),
+  chiTiet: (ma) => mayChu.get(`/quan-ly/don-dat-phong/${ma}`),
+  tao: (duLieu) => mayChu.post('/quan-ly/don-dat-phong', duLieu),
+  sua: (ma, duLieu) => mayChu.put(`/quan-ly/don-dat-phong/${ma}`, duLieu),
+  phongTrong: (thamSo) => mayChu.get('/quan-ly/phong-trong', { params: thamSo }),
+  xemTruocHuy: (ma, maChiTiet) => mayChu.get(`/quan-ly/don-dat-phong/${ma}/xem-truoc-huy`, { params: maChiTiet ? { maChiTiet } : {} }),
+  huy: (ma, duLieu) => mayChu.post(`/quan-ly/don-dat-phong/${ma}/huy`, duLieu),
+  huyChiTiet: (ma, maChiTiet, duLieu) => mayChu.post(`/quan-ly/don-dat-phong/${ma}/chi-tiet/${maChiTiet}/huy`, duLieu),
+  nhanPhong: (maChiTiet, duLieu) => mayChu.post(`/quan-ly/chi-tiet/${maChiTiet}/check-in`, duLieu),
+  giaHan: (maChiTiet, duLieu) => mayChu.post(`/quan-ly/chi-tiet/${maChiTiet}/gia-han`, duLieu),
+  xemTruocTraPhong: (maChiTiet, duLieu) => mayChu.post(`/quan-ly/chi-tiet/${maChiTiet}/xem-truoc-tra`, duLieu),
+  traPhong: (maChiTiet, duLieu) => mayChu.post(`/quan-ly/chi-tiet/${maChiTiet}/check-out`, duLieu),
+  hoaDonTheoDon: (ma) => mayChu.get(`/quan-ly/don-dat-phong/${ma}/hoa-don`),
+  thanhToan: (maHoaDon, duLieu) => mayChu.post(`/quan-ly/hoa-don/${maHoaDon}/thanh-toan`, duLieu),
+  nhatKy: (ma, trang = 1) => mayChu.get(`/quan-ly/nhat-ky-thao-tac/${ma}`, { params: { trang, kichThuoc: 10 } }),
+};

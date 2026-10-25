@@ -1,0 +1,12 @@
+coSoDuLieu.diaChi=jdbc:mysql://localhost:3306/homestay?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Ho_Chi_Minh
+coSoDuLieu.tenDangNhap=root
+coSoDuLieu.matKhau=CHANGE_ME
+thu_muc_anh=D:/homestay/anh-phong
+datCoc.tyLePhanTram=30
+datCoc.thoiGianGiuChoPhut=15
+datCoc.nganHang=
+datCoc.soTaiKhoan=
+datCoc.chuTaiKhoan=
+datCoc.demo=false
+datCoc.demoSauGiay=0
+
